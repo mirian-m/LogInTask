@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		84B8FC092879469600222744 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8FC082879469600222744 /* AppDelegate.swift */; };
 		84B8FC0B2879469600222744 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8FC0A2879469600222744 /* SceneDelegate.swift */; };
-		84B8FC0D2879469600222744 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8FC0C2879469600222744 /* ViewController.swift */; };
+		84B8FC0D2879469600222744 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8FC0C2879469600222744 /* LogInViewController.swift */; };
 		84B8FC102879469600222744 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B8FC0E2879469600222744 /* Main.storyboard */; };
 		84B8FC12287946A100222744 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B8FC11287946A100222744 /* Assets.xcassets */; };
 		84B8FC15287946A100222744 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B8FC13287946A100222744 /* LaunchScreen.storyboard */; };
+		84B8FC2028795B7A00222744 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8FC1F28795B7A00222744 /* RegistrationViewController.swift */; };
+		84B8FC2428796A9A00222744 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8FC2328796A9A00222744 /* DetailsViewController.swift */; };
+		84B8FC2C28798FB500222744 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8FC2B28798FB400222744 /* User.swift */; };
+		84B8FC36287A158F00222744 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8FC35287A158B00222744 /* BottomSheetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84B8FC052879469600222744 /* MIrianMaglakelidze#14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MIrianMaglakelidze#14.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B8FC082879469600222744 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B8FC0A2879469600222744 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		84B8FC0C2879469600222744 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84B8FC0C2879469600222744 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		84B8FC0F2879469600222744 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84B8FC11287946A100222744 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84B8FC14287946A100222744 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84B8FC16287946A100222744 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B8FC1F28795B7A00222744 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		84B8FC2328796A9A00222744 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		84B8FC2B28798FB400222744 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		84B8FC35287A158B00222744 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,35 @@
 		84B8FC072879469600222744 /* MIrianMaglakelidze#14 */ = {
 			isa = PBXGroup;
 			children = (
-				84B8FC082879469600222744 /* AppDelegate.swift */,
-				84B8FC0A2879469600222744 /* SceneDelegate.swift */,
-				84B8FC0C2879469600222744 /* ViewController.swift */,
+				84B8FC2F2879939300222744 /* Models */,
+				84B8FC1E28795B2D00222744 /* Controllers */,
 				84B8FC0E2879469600222744 /* Main.storyboard */,
+				84B8FC0A2879469600222744 /* SceneDelegate.swift */,
+				84B8FC082879469600222744 /* AppDelegate.swift */,
 				84B8FC11287946A100222744 /* Assets.xcassets */,
 				84B8FC13287946A100222744 /* LaunchScreen.storyboard */,
 				84B8FC16287946A100222744 /* Info.plist */,
 			);
 			path = "MIrianMaglakelidze#14";
+			sourceTree = "<group>";
+		};
+		84B8FC1E28795B2D00222744 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84B8FC0C2879469600222744 /* LogInViewController.swift */,
+				84B8FC1F28795B7A00222744 /* RegistrationViewController.swift */,
+				84B8FC2328796A9A00222744 /* DetailsViewController.swift */,
+				84B8FC35287A158B00222744 /* BottomSheetViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		84B8FC2F2879939300222744 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84B8FC2B28798FB400222744 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +165,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B8FC0D2879469600222744 /* ViewController.swift in Sources */,
+				84B8FC0D2879469600222744 /* LogInViewController.swift in Sources */,
+				84B8FC36287A158F00222744 /* BottomSheetViewController.swift in Sources */,
 				84B8FC092879469600222744 /* AppDelegate.swift in Sources */,
+				84B8FC2028795B7A00222744 /* RegistrationViewController.swift in Sources */,
+				84B8FC2C28798FB500222744 /* User.swift in Sources */,
 				84B8FC0B2879469600222744 /* SceneDelegate.swift in Sources */,
+				84B8FC2428796A9A00222744 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
