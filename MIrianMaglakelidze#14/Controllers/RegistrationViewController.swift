@@ -65,22 +65,27 @@ extension RegistrationViewController {
     func registrationCheckFor(email: String, password: String, name: String, confirmPas: String) {
         switch false {
         case isValidEmail(email):
-            showAlertWith(text: "Email is not Valid")
+            showAlertWith(title: "ERROR", text: "Email is not Valid")
         case isPasswordValid(password):
-            showAlertWith(text: "This password is not Secure")
+            showAlertWith(title: "ERROR", text: "This password is not Secure")
         case isConfirmdPasswordMatch(confirmPas):
-            showAlertWith(text: "Passwords doesn't Match")
+            showAlertWith(title: "ERROR", text: "Passwords doesn't Match")
         case !name.isEmpty:
-            showAlertWith(text: "Please fill in all Fields")
+            showAlertWith(title: "ERROR", text: "Please fill in all Fields")
         default:
-            delegat?.getInfo(user: user)
-            navigationController?.popViewController(animated: true)
+            let alert = UIAlertController(title: "SUCCESS", message: "\nRegistration completed Successfully\nPress 'OK' To go Log In Pages", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { [weak self](result: UIAlertAction) -> Void in
+                self?.delegat?.getInfo(user: self!.user)
+                self?.navigationController?.popViewController(animated: true)
+            }
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
         }
     }
     
     // ALERT FUNCTION
-    func showAlertWith(text: String) {
-        let alert = UIAlertController(title: "ERROR", message: "\n\(text)", preferredStyle: .alert)
+    func showAlertWith(title: String, text: String) {
+        let alert = UIAlertController(title: title, message: "\n\(text)", preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
