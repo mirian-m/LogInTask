@@ -30,7 +30,7 @@ class BottomSheetViewController: UIViewController {
     
     @IBAction func yesBtnTapped(_ sender: Any) {
         self.dismiss(animated: false) { [weak self] in
-            self?.delegate?.backHomeViewController()
+            self?.delegate?.backToRootViewController()
         }
     }
     @IBAction func noBtnTapped(_ sender: Any) {

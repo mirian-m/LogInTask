@@ -1,8 +1,9 @@
 import UIKit
 
 protocol DetailsViewControllerDelegate: class {
-    func backHomeViewController()
+    func backToRootViewController()
 }
+
 class DetailsViewController: UIViewController {
     @IBOutlet weak var signOut: UIButton!
     @IBOutlet weak var userName: UILabel!
@@ -12,7 +13,7 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpOutlets()
+        setupOutlets()
     }
     
     @IBAction func signOut(_ sender: Any) {
@@ -21,7 +22,7 @@ class DetailsViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
-    func setUpOutlets() {
+    func setupOutlets() {
         userName.text = user?.name
         email.text = user?.email
     }
@@ -30,7 +31,7 @@ class DetailsViewController: UIViewController {
 // MARK:- EXTENSION
 
 extension DetailsViewController: DetailsViewControllerDelegate {
-    func backHomeViewController() {
+    func backToRootViewController() {
         navigationController?.popToRootViewController(animated: true)
     }
 

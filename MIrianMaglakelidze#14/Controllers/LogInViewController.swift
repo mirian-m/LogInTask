@@ -6,7 +6,7 @@ protocol LogInViewControllerDelegat: class {
 class LogInViewController: UIViewController {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
-    private var users: [User] = []
+    private var registeredUsers: [User] = []
     
     // MARK:- CONTROLLER LIFE CYCLE FUNCTION
     override func viewDidLoad() {
@@ -48,12 +48,12 @@ extension LogInViewController: LogInViewControllerDelegat {
     
     // PROTOCOL function
     func getInfo(user: User) {
-        users.append(user)
+        registeredUsers.append(user)
     }
     
     // Check IF User is registrate
     private func checkRegistration() -> [User]? {
-        return users.filter { $0.name == userName.text && $0.passwor == password.text }
+        return registeredUsers.filter { $0.name == userName.text && $0.passwor == password.text }
     }
     
     // Show alert method

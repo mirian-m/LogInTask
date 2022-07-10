@@ -12,9 +12,9 @@ class RegistrationViewController: UIViewController {
             return User(name: userName.text ?? "", email: email.text ?? "", passwor: password.text ?? "")
         }
     }
-    weak var delegat: LogInViewControllerDelegat?
     private let numberString: [String] = (0...9).map { String($0) }
     private let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    weak var delegat: LogInViewControllerDelegat?
     
     // MARK: - CONTROLLER LIFE CYCLE METHODS
     override func viewDidLoad() {
@@ -73,17 +73,22 @@ extension RegistrationViewController {
         case !name.isEmpty:
             showAlertWith(title: "ERROR", text: "Please fill in all Fields")
         default:
-            let alert = UIAlertController(title: "SUCCESS", message: "\nRegistration completed Successfully\nPress 'OK' To go Log In Pages", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .default) { [weak self](result: UIAlertAction) -> Void in
-                self?.delegat?.getInfo(user: self!.user)
-                self?.navigationController?.popViewController(animated: true)
-            }
-            alert.addAction(action)
-            present(alert, animated: true, completion: nil)
+            showSuccessMessageAndGoBackToLogIn()
         }
     }
     
-    // ALERT FUNCTION
+    // SHOWALERT FUNCTIONS
+    
+    func showSuccessMessageAndGoBackToLogIn() {
+        let alert = UIAlertController(title: "SUCCESS", message: "\nRegistration completed Successfully\nClick 'OK' to return to the LogIn page", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default) { [weak self](result: UIAlertAction) -> Void in
+            self?.delegat?.getInfo(user: self!.user)
+            self?.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
     func showAlertWith(title: String, text: String) {
         let alert = UIAlertController(title: title, message: "\n\(text)", preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
