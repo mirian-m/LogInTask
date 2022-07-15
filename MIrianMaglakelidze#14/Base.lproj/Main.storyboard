@@ -332,7 +332,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="34"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="70" id="sjI-qG-r6R"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="sjI-qG-r6R"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="YES">
@@ -373,7 +373,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2LB-ll-QK9"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="w74-0A-kNc" firstAttribute="leading" secondItem="2LB-ll-QK9" secondAttribute="leading" constant="15" id="CKP-G2-1ih"/>
                             <constraint firstItem="w74-0A-kNc" firstAttribute="height" secondItem="LeA-kz-zWt" secondAttribute="height" multiplier="0.5" id="bkb-rn-mar"/>

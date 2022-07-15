@@ -13,7 +13,10 @@ class RegistrationViewController: UIViewController {
         }
     }
     private let numberString: [String] = (0...9).map { String($0) }
-    private let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    private let alphabet = [
+        "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
+    ]
+    
     weak var delegat: LogInViewControllerDelegat?
     
     // MARK: - CONTROLLER LIFE CYCLE METHODS
@@ -78,14 +81,14 @@ extension RegistrationViewController {
     }
     
     // SHOWALERT FUNCTIONS
-    
     func showSuccessMessageAndGoBackToLogIn() {
         let alert = UIAlertController(title: "SUCCESS", message: "\nRegistration completed Successfully\nClick 'OK' to return to the LogIn page", preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default) { [weak self](result: UIAlertAction) -> Void in
+        let action = UIAlertAction(title: "OK", style: .default) { [weak self] (result: UIAlertAction) -> Void in
             self?.delegat?.getInfo(user: self!.user)
             self?.navigationController?.popViewController(animated: true)
         }
         alert.addAction(action)
+        alert.view.tintColor = .green
         present(alert, animated: true, completion: nil)
     }
     
@@ -93,6 +96,7 @@ extension RegistrationViewController {
         let alert = UIAlertController(title: title, message: "\n\(text)", preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
         alert.addAction(action)
+        alert.view.tintColor = .red
         present(alert, animated: true, completion: nil)
     }
 }

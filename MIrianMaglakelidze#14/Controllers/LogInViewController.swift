@@ -1,6 +1,6 @@
 import UIKit
 
-protocol LogInViewControllerDelegat: class {
+protocol LogInViewControllerDelegat: AnyObject {
     func getInfo(user: User)
 }
 class LogInViewController: UIViewController {
@@ -60,6 +60,7 @@ extension LogInViewController: LogInViewControllerDelegat {
     private func showAlert() {
         let alert = UIAlertController(title: "ERROR", message: "\nIncorrect Credentials", preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        alert.view.tintColor = .red
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
