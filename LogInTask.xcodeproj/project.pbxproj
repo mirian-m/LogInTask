@@ -17,10 +17,11 @@
 		84B8FC2428796A9A00222744 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8FC2328796A9A00222744 /* DetailsViewController.swift */; };
 		84B8FC2C28798FB500222744 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8FC2B28798FB400222744 /* User.swift */; };
 		84B8FC36287A158F00222744 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8FC35287A158B00222744 /* BottomSheetViewController.swift */; };
+		84B98BF92AD3298100A58AB7 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B98BF82AD3298100A58AB7 /* UserDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		84B8FC052879469600222744 /* MIrianMaglakelidze#14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MIrianMaglakelidze#14.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B8FC052879469600222744 /* LogInTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogInTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B8FC082879469600222744 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B8FC0A2879469600222744 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		84B8FC0C2879469600222744 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +33,7 @@
 		84B8FC2328796A9A00222744 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		84B8FC2B28798FB400222744 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		84B8FC35287A158B00222744 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		84B98BF82AD3298100A58AB7 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,7 @@
 		84B8FBFC2879469600222744 = {
 			isa = PBXGroup;
 			children = (
-				84B8FC072879469600222744 /* MIrianMaglakelidze#14 */,
+				84B8FC072879469600222744 /* LogInTask */,
 				84B8FC062879469600222744 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,14 +58,15 @@
 		84B8FC062879469600222744 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				84B8FC052879469600222744 /* MIrianMaglakelidze#14.app */,
+				84B8FC052879469600222744 /* LogInTask.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		84B8FC072879469600222744 /* MIrianMaglakelidze#14 */ = {
+		84B8FC072879469600222744 /* LogInTask */ = {
 			isa = PBXGroup;
 			children = (
+				84B98BF72AD3296D00A58AB7 /* Manager */,
 				84B8FC2F2879939300222744 /* Models */,
 				84B8FC1E28795B2D00222744 /* Controllers */,
 				84B8FC0E2879469600222744 /* Main.storyboard */,
@@ -73,7 +76,7 @@
 				84B8FC13287946A100222744 /* LaunchScreen.storyboard */,
 				84B8FC16287946A100222744 /* Info.plist */,
 			);
-			path = "MIrianMaglakelidze#14";
+			path = LogInTask;
 			sourceTree = "<group>";
 		};
 		84B8FC1E28795B2D00222744 /* Controllers */ = {
@@ -95,12 +98,20 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		84B98BF72AD3296D00A58AB7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				84B98BF82AD3298100A58AB7 /* UserDataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		84B8FC042879469600222744 /* MIrianMaglakelidze#14 */ = {
+		84B8FC042879469600222744 /* LogInTask */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 84B8FC19287946A100222744 /* Build configuration list for PBXNativeTarget "MIrianMaglakelidze#14" */;
+			buildConfigurationList = 84B8FC19287946A100222744 /* Build configuration list for PBXNativeTarget "LogInTask" */;
 			buildPhases = (
 				84B8FC012879469600222744 /* Sources */,
 				84B8FC022879469600222744 /* Frameworks */,
@@ -110,9 +121,9 @@
 			);
 			dependencies = (
 			);
-			name = "MIrianMaglakelidze#14";
+			name = LogInTask;
 			productName = "MIrianMaglakelidze#14";
-			productReference = 84B8FC052879469600222744 /* MIrianMaglakelidze#14.app */;
+			productReference = 84B8FC052879469600222744 /* LogInTask.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -126,10 +137,11 @@
 				TargetAttributes = {
 					84B8FC042879469600222744 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
-			buildConfigurationList = 84B8FC002879469600222744 /* Build configuration list for PBXProject "MIrianMaglakelidze#14" */;
+			buildConfigurationList = 84B8FC002879469600222744 /* Build configuration list for PBXProject "LogInTask" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -142,7 +154,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				84B8FC042879469600222744 /* MIrianMaglakelidze#14 */,
+				84B8FC042879469600222744 /* LogInTask */,
 			);
 		};
 /* End PBXProject section */
@@ -167,6 +179,7 @@
 			files = (
 				84B8FC0D2879469600222744 /* LogInViewController.swift in Sources */,
 				84B8FC36287A158F00222744 /* BottomSheetViewController.swift in Sources */,
+				84B98BF92AD3298100A58AB7 /* UserDataManager.swift in Sources */,
 				84B8FC092879469600222744 /* AppDelegate.swift in Sources */,
 				84B8FC2028795B7A00222744 /* RegistrationViewController.swift in Sources */,
 				84B8FC2C28798FB500222744 /* User.swift in Sources */,
@@ -318,14 +331,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "MIrianMaglakelidze#14/Info.plist";
+				INFOPLIST_FILE = LogInTask/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Mirian-maglakelidze.MIrianMaglakelidze-14";
+				PRODUCT_BUNDLE_IDENTIFIER = "Mirian-maglakelidze.LogInTask";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -336,13 +351,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "MIrianMaglakelidze#14/Info.plist";
+				INFOPLIST_FILE = LogInTask/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Mirian-maglakelidze.MIrianMaglakelidze-14";
+				PRODUCT_BUNDLE_IDENTIFIER = "Mirian-maglakelidze.LogInTask";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -352,7 +368,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		84B8FC002879469600222744 /* Build configuration list for PBXProject "MIrianMaglakelidze#14" */ = {
+		84B8FC002879469600222744 /* Build configuration list for PBXProject "LogInTask" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84B8FC17287946A100222744 /* Debug */,
@@ -361,7 +377,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		84B8FC19287946A100222744 /* Build configuration list for PBXNativeTarget "MIrianMaglakelidze#14" */ = {
+		84B8FC19287946A100222744 /* Build configuration list for PBXNativeTarget "LogInTask" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84B8FC1A287946A100222744 /* Debug */,

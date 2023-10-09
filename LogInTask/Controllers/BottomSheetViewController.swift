@@ -1,6 +1,6 @@
 import UIKit
 
-class BottomSheetViewController: UIViewController {
+final class BottomSheetViewController: UIViewController {
     
     // MARK:- OUTLETS
     
@@ -27,7 +27,6 @@ class BottomSheetViewController: UIViewController {
     }
     
     // MARK:- BUTTON FUNCTIONS
-    
     @IBAction func yesBtnTapped(_ sender: Any) {
         self.dismiss(animated: false) { [weak self] in
             self?.delegate?.backToRootViewController()

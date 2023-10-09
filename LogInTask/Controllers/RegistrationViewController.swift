@@ -1,15 +1,14 @@
 import UIKit
 
-class RegistrationViewController: UIViewController {
+final class RegistrationViewController: UIViewController {
     @IBOutlet weak var userName: UITextField!
-    @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
     
     // MARK: - PROPERTIES
     private var user: User {
         get {
-            return User(name: userName.text ?? "", email: email.text ?? "", passwor: password.text ?? "")
+            return User(name: userName.text ?? "",  password: password.text ?? "")
         }
     }
     private let numberString: [String] = (0...9).map { String($0) }
@@ -27,7 +26,11 @@ class RegistrationViewController: UIViewController {
     
     // MARK: - BUTTON ACTIONS
     @IBAction func signUp(_ sender: Any) {
-        registrationCheckFor(email: email.text ?? "", password: password.text ?? "", name: userName.text ?? "", confirmPas: confirmPassword.text ?? "")
+        registrationCheckFor(
+            password: password.text ?? "",
+            name: userName.text ?? "",
+            confirmPassword: confirmPassword.text ?? ""
+        )
     }
 }
 
@@ -45,13 +48,6 @@ extension RegistrationViewController {
     
     // MARK: - VALIDITY FUNCTIONS
     
-    // Check Email validity
-    private func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
-    }
-    
     // Checking password validity
     private func isPasswordValid(_ passowrd: String) -> Bool {
         return passowrd.count >= 8 &&
@@ -59,19 +55,17 @@ extension RegistrationViewController {
             passowrd.map({ numberString.contains(String($0)) }).contains(true)
     }
     
-    // checking if confirm password is matche to main password
+    // checking if confirm password is matched to main password
     private func isConfirmdPasswordMatch(_ confirmedPassword: String) -> Bool {
         return confirmedPassword == password.text
     }
     
     // Check registration
-    func registrationCheckFor(email: String, password: String, name: String, confirmPas: String) {
+    func registrationCheckFor(password: String, name: String, confirmPassword: String) {
         switch false {
-        case isValidEmail(email):
-            showAlertWith(title: "ERROR", text: "Email is not Valid")
         case isPasswordValid(password):
             showAlertWith(title: "ERROR", text: "This password is not Secure")
-        case isConfirmdPasswordMatch(confirmPas):
+        case isConfirmdPasswordMatch(confirmPassword):
             showAlertWith(title: "ERROR", text: "Passwords doesn't Match")
         case !name.isEmpty:
             showAlertWith(title: "ERROR", text: "Please fill in all Fields")
@@ -84,7 +78,7 @@ extension RegistrationViewController {
     func showSuccessMessageAndGoBackToLogIn() {
         let alert = UIAlertController(title: "SUCCESS", message: "\nRegistration completed Successfully\nClick 'OK' to return to the LogIn page", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default) { [weak self] (result: UIAlertAction) -> Void in
-            self?.delegat?.getInfo(user: self!.user)
+            self?.delegat?.register(user: self!.user)
             self?.navigationController?.popViewController(animated: true)
         }
         alert.addAction(action)
